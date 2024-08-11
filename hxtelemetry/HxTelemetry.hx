@@ -5,6 +5,7 @@ import amf.io.Amf3Writer;
 import haxe.ds.StringMap;
 import haxe.io.Bytes;
 
+/*
 #if cpp
   import cpp.vm.Thread;
   import cpp.vm.Mutex;
@@ -12,8 +13,14 @@ import haxe.io.Bytes;
   import neko.vm.Thread;
   import neko.vm.Mutex;
 #elseif hl
-  import hl.vm.Thread;
-  import hl.vm.Mutex;
+  import sys.thread.Thread;
+  import sys.thread.Mutex;
+#end
+*/
+
+#if (cpp || neko || hl)
+import sys.thread.Thread;
+import sys.thread.Mutex;
 #end
 
 #if (cpp && HXCPP_TELEMETRY)

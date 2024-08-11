@@ -33,7 +33,8 @@ class HLHxTelemetry {
 	}
 
 	public inline static function disable_alloc_tracking(set_disabled:Bool):Void {
-		hl.Profile.enable = !set_disabled;
+		// TODO: fix
+		//hl.Profile.enable = !set_disabled;
 	}
 
 	static var TYPES = new hl.types.ObjectMap();
